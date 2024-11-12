@@ -1,0 +1,9 @@
+# administrator task
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: expense-ebs
+reclaimPolicy: Retain
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumer
+#since this is cluster level resource so it is not required to provide namespace as expense.
